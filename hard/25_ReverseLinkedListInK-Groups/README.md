@@ -1,4 +1,4 @@
-# 🚀 [Số thứ tự bài] - [Tên bài toán LeetCode]
+# 🚀 [25] - [Reverse Nodes in k-Group]
 
 **Độ khó:** 🔴 Hard  
 **Nền tảng:** [LeetCode](https://leetcode.com/problems/reverse-nodes-in-k-group/)
