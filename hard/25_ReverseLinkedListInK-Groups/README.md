@@ -10,7 +10,7 @@
 *KHi đảo ngược thì node đầu nhóm sau khi kết thúc sẽ là node cuối nhóm, nghĩ về việc dịch từng node "sau node đầu tiên" ra sau vị trí bạn đánh dấu là "node đứng trước nhóm đó" và sau khi hoàn thành thì đệ quy phần còn lại*
 
 1. **Phân tích ban đầu:** nhận thấy bài toán yêu cầu có thể giải quyết với tốc độ O(n) thì chỉ được duyệt qua node 1 lần,
-2. **Thuật toán sử dụng:** vừa vừa đổi vị trí
+2. **Thuật toán sử dụng:** vừa duyệt vừa đổi vị trí
 3. **Các bước thực hiện:**
    - Bước 1: tạo node rỗng trỏ vào head, 1 con trỏ node trỏ bào dummy, 1 biến đếm để xác nhận nhóm có đủ không.
    - Bước 2: kiểm tra nếu không có node nào sau đó thì return luôn
