@@ -14,7 +14,7 @@
 3. **Các bước thực hiện:**
    - Bước 1: tạo node rỗng (dummy) nối đến head, tạo node trỏ prev vào dummy, 1 biến đếm (countGroup) để kiểm tra nhóm có đủ node không.
    - Bước 2: kiểm tra nếu không có node nào sau đó thì return luôn
-   - Bước 3: tạo con trỏ curr để nắm node đầu và cũng là node cuối của danh sách
+   - Bước 3: tạo con trỏ curr để nắm node đầu và cũng là node cuối của danh sách sau sắp xếp
    - Bước 4: loop while lấu từng phần tử đẩy ngược lên đầu nhóm
    - Bước 5: nếu nhóm đủ thì sẽ đệ quy nhóm tiếp theo, nếu không sẽ đệ quy chạy lại từ đầu với k = countGroup mình vừa đến để trả lại vị trí nhóm như ban đầu
 
