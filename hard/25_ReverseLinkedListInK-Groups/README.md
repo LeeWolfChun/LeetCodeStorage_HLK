@@ -19,7 +19,7 @@
    - Bước 5: nếu nhóm đủ thì sẽ đệ quy nhóm tiếp theo, nếu không sẽ đệ quy chạy lại từ đầu với k = countGroup mình vừa đến để trả lại vị trí nhóm như ban đầu
 
 ## ⏱️ Độ phức tạp (Complexity)
-- **Độ phức tạp thời gian (Time Complexity):** $O(N)$ *(vì vòng lặp chạy qua mảng đúng 1 lần và có thêm 1 lần chạy với só lượng công đoạn < k, nên tốc độ vẫn O(N)*
+- **Độ phức tạp thời gian (Time Complexity):** $O(N)$ *(vì vòng lặp chạy qua mảng đúng 1 lần và có thêm 1 lần chạy với số lượng công đoạn < k, nên tốc độ vẫn O(N)*
 - **Độ phức tạp không gian (Space Complexity):** $O(1)$ hoặc $O(N)$ *(không tao thêm khôgn gian mới )*
 
 ## 💻 Code Solution
