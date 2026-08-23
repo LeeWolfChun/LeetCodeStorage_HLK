@@ -12,14 +12,14 @@
 1. **Phân tích ban đầu:** nhận thấy bài toán yêu cầu có thể giải quyết với tốc độ O(n) thì chỉ được duyệt qua node 1 lần,
 2. **Thuật toán sử dụng:** vừa duyệt vừa đổi vị trí
 3. **Các bước thực hiện:**
-   - Bước 1: tạo node rỗng trỏ vào head, 1 con trỏ node trỏ bào dummy, 1 biến đếm để xác nhận nhóm có đủ không.
+   - Bước 1: tạo node rỗng (dummy) nối đến head, tạo node trỏ prev vào dummy, 1 biến đếm (countGroup) để kiểm tra nhóm có đủ node không.
    - Bước 2: kiểm tra nếu không có node nào sau đó thì return luôn
    - Bước 3: tạo con trỏ curr để nắm node đầu và cũng là node cuối của danh sách
    - Bước 4: loop while lấu từng phần tử đẩy ngược lên đầu nhóm
-   - Bước 5: nếu nhóm đủ thì sẽ đệ quy nhóm tiếp theo, nếu không sẽ đệ quy chạy lại từ đầu với k = count mình vừa đến để trảe lại vị trí nhóm như ban đầu
+   - Bước 5: nếu nhóm đủ thì sẽ đệ quy nhóm tiếp theo, nếu không sẽ đệ quy chạy lại từ đầu với k = countGroup mình vừa đến để trả lại vị trí nhóm như ban đầu
 
 ## ⏱️ Độ phức tạp (Complexity)
-- **Độ phức tạp thời gian (Time Complexity):** $O(N)$ *(vì vòng lặp chạy qua mảng đúng 1 lần và có thêm 1 lần chạy với só lượng công đoạn < k, nên tốc đọ vẫn O(N)*
+- **Độ phức tạp thời gian (Time Complexity):** $O(N)$ *(vì vòng lặp chạy qua mảng đúng 1 lần và có thêm 1 lần chạy với só lượng công đoạn < k, nên tốc độ vẫn O(N)*
 - **Độ phức tạp không gian (Space Complexity):** $O(1)$ hoặc $O(N)$ *(không tao thêm khôgn gian mới )*
 
 ## 💻 Code Solution
