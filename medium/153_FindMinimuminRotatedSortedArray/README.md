@@ -4,7 +4,6 @@ Bài toán yêu cầu tìm min của 1 mảng tăng dần không tùng lăp và 
 
 1. **Khởi tạo:**
    * Dùng 3 con trỏ `left` = 0 , `right` = độ dài mảng -1 và  `mid`.
-   * Dùng mảng `last_seen` (kích thước 256 để phủ toàn bộ bảng mã ASCII) nhằm lưu vị trí xuất hiện cuối cùng của mỗi ký tự. Ban đầu, mọi giá trị là `-1`.
 
 2. **Loop để tim ra vị trí nhỏ nhất**
    * Cập nhật mid là phần tử giửa mảng.
