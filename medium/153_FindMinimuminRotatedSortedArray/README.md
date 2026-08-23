@@ -8,7 +8,7 @@ Bài toán yêu cầu tìm min của 1 mảng tăng dần không tùng lăp và 
 2. **Loop để tim ra vị trí nhỏ nhất**
    * Cập nhật mid là phần tử giửa mảng.
    * So sánh 2 phần tử left và right, nếu left < right thì mảng tăng nghiêm ngặt, lúc này trả về nums[left].
-   * trường hợp còn lại thì phần tử nhỏ nhất sẽ nnằm ở khoảng giửa, lúc này so sánh phần tử mid, nếu phần tử mid nhỏ hơn left chứng tỏ trong đây chứa phần tử nhro nhất vì mảng đươc yêu cầu tăng dần => trong đoạn left mid chứa min nên right = mid, trường hợp còn lại chuyển left = mid.
+   * trường hợp còn lại thì phần tử nhỏ nhất sẽ nnằm ở khoảng giửa, lúc này so sánh phần tử mid, nếu phần tử mid nhỏ hơn left chứng tỏ trong đây chứa phần tử nhỏ nhất vì mảng đươc yêu cầu tăng dần => trong đoạn left mid chứa min nên right = mid, trường hợp còn lại chuyển left = mid.
 
 ---
 
