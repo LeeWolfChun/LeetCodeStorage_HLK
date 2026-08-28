@@ -6,8 +6,8 @@
 * để giải quyết nó thì ta sẽ thêm vào 2 biến để ghi lại khoảng giá trị mà nút dang xét hợp lệ. Nếu đệ quy về nút trái thì phải điều chỉnh biên phải về giá trị của nút cha, nếu đệ quy về bên trái thì phải điều chnhr biên trái thành nút cha
 
 ## ⚠️ Các trường hợp đặc biệt (Edge Cases)
-* **Lỗi giá trị biên:**Nếu gặp trường hợp số quá lớn hoặc quá bé thì thuật toán sẽ lỗi, nên set ban đầu biên trái là LONG_MIN và biên phải là LONG_MAX.
-* **Lỗi ghi đè bool:**Nếu cập nhật bool lần lượt từ trái qua phải thì nếu false sẽ bị true ghi đè nếu có sai. Dể giải quyết nó thì chúng ta sẽ sử dụng toán tử && để so sánh đệ quy trái và phải cùng lúc.
+* **Lỗi giá trị biên:** Nếu gặp trường hợp số quá lớn hoặc quá bé thì thuật toán sẽ lỗi, nên set ban đầu biên trái là LONG_MIN và biên phải là LONG_MAX.
+* **Lỗi ghi đè bool:** Nếu cập nhật bool lần lượt từ trái qua phải thì nếu false sẽ bị true ghi đè nếu có sai. Dể giải quyết nó thì chúng ta sẽ sử dụng toán tử && để so sánh đệ quy trái và phải cùng lúc.
 ## 🛠️ Mã nguồn (Source Code)
 
 ```cpp
