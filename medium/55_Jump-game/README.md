@@ -6,46 +6,43 @@
 give an array containing intergers, start at index 0, current number is maximum jumping. return true if finish at last index
  
 **Example:**
-- Input: 
-- Output: 
+- Input: [2,3,1,1,2]
+- Output: true
 - Constraints: 
-**Link:** https://leetcode.com/problems/jump-game/description/
+**Link:** [Leetcode 55](https://leetcode.com/problems/jump-game/description/)
  
 ---
  
 ## 🎯 Approach / Solution Strategy
  
 ### **Key Insight**
-[1-3 câu giải thích tại sao bạn chọn cách này - đây là phần quan trọng nhất]
+Usable DP(dynamic programming) but i following a greedy, just interare through the array one. Think about the current index and then jump the farthest, update the farthest. if browse at index > farthest , break loop because we couldn't come it and return false. else we can come it so return true.
  
 ### **Algorithm**
-1. Step 1: [mô tả bước 1]
-2. Step 2: [mô tả bước 2]
-3. Step 3: [mô tả bước 3]
+1. Step 1: operator integer n = size of nums, integer farthest = nums[0] and return true if n <= 1/
+2. Step 2: loop with i = 0 , i <=farthest and i < n, i++
+3. Step 3: om loop .update farthest with max between farthest and current index plus jump there.
+4. Step 4: if farthest >= n-1 ,return true and else return false
 ### **Why This Works**
-[Giải thích logic đằng sau - tại sao algorithm này giải quyết bài toán]
+the above agorithrm use one loop begin at index = 0 and finish at last index of nums , so time comflexity to be o(n) and space comflexity to be o(1).
  
 ---
  
 ## 💻 Code
  
-```python
-# Language: [Python/Java/Go/etc]
-# Time: O(?)  | Space: O(?)
- 
-class Solution:
-    def solutionName(self, ...):
-        """
-        Brief description of what function does
-        
-        Args:
-            param: explanation
-            
-        Returns:
-            explanation of return value
-        """
-        # Your code here
-        pass
+```cpp
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int n = nums.size(); 
+        if( n <= 1 ) return true;
+        int farthest = nums[0];
+        for( int i = 0; i <= farthest && i < n; i ++){
+            farthest = max(farthest,i + nums[i]);
+        }
+        return (farthest >= n - 1) ? true : false;
+    }
+};
 ```
  
 ---
@@ -54,9 +51,9 @@ class Solution:
  
 | Metric | Complexity | Explanation |
 |--------|-----------|-------------|
-| **Time** | O(?) | [Giải thích từng vòng lặp/operation] |
-| **Space** | O(?) | [Giải thích memory sử dụng] |
-| **Trade-off** | [Nếu có] | [Bạn trade off gì?] |
+| **Time** | O(n) | the above agorithrm use one loop begin at index = 0 and finish at last index of nums |
+| **Space** | O(1) | no use extra array |
+
  
 ---
  
@@ -64,105 +61,51 @@ class Solution:
  
 | Edge Case | How I Handle It | Code |
 |-----------|-----------------|------|
-| Empty input | [mô tả] | `if not input: return ...` |
-| Single element | [mô tả] | `if len == 1: return ...` |
-| [Your edge case] | [mô tả] | [code snippet] |
+| Empty input | [] | `if (n <= 1) return true;` |
+| Single element | [0] | `if (n <= 1) return true;` |
  
 ---
  
 ## 🔄 Test Cases
  
-```python
+```cpp
 # Test Case 1: Normal case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: [2,3,1,1,4]
+Expected: true
+Got: true
 ✅ PASS
  
-# Test Case 2: Edge case
-Input: [example]
-Expected: [result]
-Got: [result]
+# Test Case 2: false case
+Input: [3,2,1,0,4]
+Expected: false
+Got: false
 ✅ PASS
  
-# Test Case 3: Large input / Stress test
-Input: [example with large data]
-Expected: [result]
-Got: [result]
-Time: XYZ ms
+# Test Case 3: empty case
+Input:[]
+Expected: true
+Got: true
 ✅ PASS
 ```
  
 ---
  
-## 🧠 Mistakes I Made First Time
- 
-1. **Mistake #1: [Cái bạn sai lần đầu]**
-   - What I did: [mô tả cách sai]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
-2. **Mistake #2: [Lỗi thứ 2]**
-   - What I did: [mô tả]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
----
- 
-## 💡 Lessons Learned / Optimizations
- 
-### **First Attempt (Brute Force)**
-- Approach: [mô tả cách brute force]
-- Time: O(n²) | Space: O(1)
-- Problem: [vấn đề của approach này]
-### **Optimized Solution**
-- Approach: [cách tối ưu]
-- Time: O(n) | Space: O(n)
-- Improvement: [so sánh - nhanh hơn bao nhiêu?]
----
- 
 ## 🎓 Concepts Used
  
-- **Data Structure**: [Hash Map / Array / Tree / etc]
-- **Algorithm Pattern**: [Two Pointers / Sliding Window / DFS / BFS / DP / etc]
-- **Technique**: [Binary Search / Greedy / Divide & Conquer / etc]
+- **Data Structure**: array
+- **Algorithm Pattern**: Dynamic Programing
+- **Technique**: greedt
 ---
- 
-## 🔗 Related Problems
- 
-- Problem #XXX - [Similar concept]
-- Problem #YYY - [Follow-up problem]
-- Problem #ZZZ - [Same data structure]
----
- 
-## 📚 Resources
- 
-- [Link to explanation article]
-- [Link to similar problem solution]
-- [Your learning resource]
----
- 
+
 ## 🏷️ Tags
  
-#tag1 #tag2 #tag3
- 
-*Example: #array #hashmap #two-pointers #medium*
- 
----
- 
-## 📝 Interview Notes
- 
-### **If asked in interview:**
-- "Walk me through your approach" → [Tóm tắt 30 giây approach]
-- "Why O(n) space?" → [Giải thích cần space cho cái gì]
-- "Can you optimize further?" → [Có cách nào tốt hơn không?]
-- "Follow-up: What if...?" → [Xử lý variant nào?]
-### **What I'd say:**
-"I would approach this by [key insight], using [data structure] to [solve what]. This gives us [complexity] time and [complexity] space because [reason]."
+#array #Dynamic programing #greedy
  
 ---
  
 ## ✅ Final Checklist
  
-- [ ] Code runs without errors
+- [yes] Code runs without errors
 - [ ] All test cases pass
 - [ ] Complexity analysis is correct
 - [ ] Edge cases handled
