@@ -3,7 +3,7 @@
  
 ## 📌 Problem Statement
  
-give an array containing intergers, start at index 0, current number is maximum jumping. return true if finish at last index
+Dive an array containing intergers, start at index 0, current number is maximum jumping. return true if finish at last index.
  
 **Example:**
 - Input: [2,3,1,1,2]
@@ -19,10 +19,10 @@ give an array containing intergers, start at index 0, current number is maximum 
 Usable DP(dynamic programming) but i following a greedy, just interare through the array one. Think about the current index and then jump the farthest, update the farthest. if browse at index > farthest , break loop because we couldn't come it and return false. else we can come it so return true.
  
 ### **Algorithm**
-1. Step 1: operator integer n = size of nums, integer farthest = nums[0] and return true if n <= 1/
-2. Step 2: loop with i = 0 , i <=farthest and i < n, i++
+1. Step 1: operator integer n = size of nums, integer farthest = nums[0] and return true if n <= 1.
+2. Step 2: loop with i = 0 , i <=farthest and i < n, i++.
 3. Step 3: om loop .update farthest with max between farthest and current index plus jump there.
-4. Step 4: if farthest >= n-1 ,return true and else return false
+4. Step 4: if farthest >= n-1 ,return true and else return false.
 ### **Why This Works**
 the above agorithrm use one loop begin at index = 0 and finish at last index of nums , so time comflexity to be o(n) and space comflexity to be o(1).
  
@@ -105,15 +105,15 @@ Got: true
  
 ## ✅ Final Checklist
  
-- [yes] Code runs without errors
-- [ ] All test cases pass
-- [ ] Complexity analysis is correct
-- [ ] Edge cases handled
-- [ ] README is clear and complete
-- [ ] Ready for interview questions
+- [x] Code runs without errors
+- [x] All test cases pass
+- [x] Complexity analysis is correct
+- [x] Edge cases handled
+- [x] README is clear and complete
+- [x] Ready for interview questions
 ---
  
 **Date Solved:** [Date]  
-**Attempt:** 1st try / 2nd try / Multiple tries  
-**Difficulty:** ⭐⭐⭐⭐⭐ (1-5 stars)  
-**Confidence Level:** 40% / 70% / 90%
+**Attempt:** 10 tries 
+**Difficulty:** ⭐⭐⭐ 
+**Confidence Level:** 90%
