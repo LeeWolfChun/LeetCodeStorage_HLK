@@ -64,97 +64,43 @@ public:
  
 | Metric | Complexity | Explanation |
 |--------|-----------|-------------|
-| **Time** | O(?) | [Giải thích từng vòng lặp/operation] |
-| **Space** | O(?) | [Giải thích memory sử dụng] |
-| **Trade-off** | [Nếu có] | [Bạn trade off gì?] |
+| **Time** | O(N) | 1 forward loop anđ 1 reverse loop |
+| **Space** | O(N) | 1 vector crit |
  
----
- 
-## ⚠️ Edge Cases & Solutions
- 
-| Edge Case | How I Handle It | Code |
-|-----------|-----------------|------|
-| Empty input | [mô tả] | `if not input: return ...` |
-| Single element | [mô tả] | `if len == 1: return ...` |
-| [Your edge case] | [mô tả] | [code snippet] |
  
 ---
  
 ## 🔄 Test Cases
  
-```python
+```cpp
 # Test Case 1: Normal case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: [1,2,2]
+Expected: 4
+Got: 4
 ✅ PASS
  
 # Test Case 2: Edge case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: [1,0,2]
+Expected: 5
+Got: 5
 ✅ PASS
- 
-# Test Case 3: Large input / Stress test
-Input: [example with large data]
-Expected: [result]
-Got: [result]
-Time: XYZ ms
-✅ PASS
+
 ```
  
 ---
  
 ## 🧠 Mistakes I Made First Time
  
-1. **Mistake #1: [Cái bạn sai lần đầu]**
-   - What I did: [mô tả cách sai]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
-2. **Mistake #2: [Lỗi thứ 2]**
-   - What I did: [mô tả]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
----
- 
-## 💡 Lessons Learned / Optimizations
- 
-### **First Attempt (Brute Force)**
-- Approach: [mô tả cách brute force]
-- Time: O(n²) | Space: O(1)
-- Problem: [vấn đề của approach này]
-### **Optimized Solution**
-- Approach: [cách tối ưu]
-- Time: O(n) | Space: O(n)
-- Improvement: [so sánh - nhanh hơn bao nhiêu?]
----
- 
-## 🎓 Concepts Used
- 
-- **Data Structure**: [Hash Map / Array / Tree / etc]
-- **Algorithm Pattern**: [Two Pointers / Sliding Window / DFS / BFS / DP / etc]
-- **Technique**: [Binary Search / Greedy / Divide & Conquer / etc]
----
- 
-## 🔗 Related Problems
- 
-- Problem #XXX - [Similar concept]
-- Problem #YYY - [Follow-up problem]
-- Problem #ZZZ - [Same data structure]
----
- 
-## 📚 Resources
- 
-- [Link to explanation article]
-- [Link to similar problem solution]
-- [Your learning resource]
+1. **Mistake #1: Once forward loop**
+   - What I did: run exacly 1 loop.
+   - Why it was wrong: only comparing rating current with neighbor on the left.
+   - Fix: coding plus one loop reverse helped commparing with neighbor on the right.
+
 ---
  
 ## 🏷️ Tags
  
-#tag1 #tag2 #tag3
- 
-*Example: #array #hashmap #two-pointers #medium*
+#array #greedy #hard
  
 ---
  
@@ -172,12 +118,12 @@ Time: XYZ ms
  
 ## ✅ Final Checklist
  
-- [ ] Code runs without errors
-- [ ] All test cases pass
-- [ ] Complexity analysis is correct
-- [ ] Edge cases handled
-- [ ] README is clear and complete
-- [ ] Ready for interview questions
+- [x] Code runs without errors
+- [x] All test cases pass
+- [x] Complexity analysis is correct
+- [x] Edge cases handled
+- [x] README is clear and complete
+- [x] Ready for interview questions
 ---
  
 **Date Solved:** [Date]  
