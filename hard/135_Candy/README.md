@@ -23,7 +23,7 @@ if rating equal then candy is minimum .
 2. Step 2: The first loop 1 start at index 1 and finish at last index. on loop, if rating[i] > rating[i-1] then share[i] = share[i-1] + 1.
 3. Step 3: The second loop is the opposite, if rating[i] > rating[i + 1] then share[i] =max(share[i +1] + 1,share[i]).
 ### **Why This Works**
-[Giải thích logic đằng sau - tại sao algorithm này giải quyết bài toán]
+first loop, it helped the children , who have rating higher neighbor on the left then have more candy. Reverse loop helped edit the number of candies to satisfy of condition on boths side and add to the result.
  
 ---
  
