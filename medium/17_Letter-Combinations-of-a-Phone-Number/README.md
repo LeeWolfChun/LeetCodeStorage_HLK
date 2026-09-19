@@ -1,4 +1,4 @@
-# [ bvhjgfiuyfguyoiti7uo9[r[] - LeetCode #[XXX]
+# Letter Combinations of a Phone Number - LeetCode #17
  
 ## 📌 Problem Statement
  Given a string containg digits from 2-9 inclusive, return all possible letter conbinations that the numbers could represent
