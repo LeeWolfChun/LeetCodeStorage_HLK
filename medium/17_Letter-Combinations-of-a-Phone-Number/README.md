@@ -1,50 +1,54 @@
 # [ bvhjgfiuyfguyoiti7uo9[r[] - LeetCode #[XXX]
  
 ## 📌 Problem Statement
- 
-[1-2 câu mô tả bài toán đơn giản nhất]
+ Given a string containg digits from 2-9 inclusive, return all possible letter conbinations that the numbers could represent
  
 **Example:**
-- Input: 
-- Output: 
+- Input: "23"
+- Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 - Constraints: 
-**Link:** [Add LeetCode link]
+**Link:** [leetcode 17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-interview-150)
  
 ---
  
 ## 🎯 Approach / Solution Strategy
  
 ### **Key Insight**
-[1-3 câu giải thích tại sao bạn chọn cách này - đây là phần quan trọng nhất]
+Usable backchecking if digits = 1 return 3 to 4  of scrambles, if digits > 1, use first char of number 1 and pick from 1 to 3 or 4 of letter second. similary, it will have more combinations than larger candle digits.
  
 ### **Algorithm**
-1. Step 1: [mô tả bước 1]
-2. Step 2: [mô tả bước 2]
-3. Step 3: [mô tả bước 3]
+1. Step 1: in class Solution: reclare a map of letters;
+2. Step 2: Create a recursive function add a combination if its size is equal to the size of digits. else it will recursively to the next number and add more letter.
+3. 3. Step 3: in main func,  reclare an empty vector of type string result, calling recursive function and return result.
 ### **Why This Works**
-[Giải thích logic đằng sau - tại sao algorithm này giải quyết bài toán]
- 
+example: digits = "23" , first call with path = "", because the size of the path is smaller than the size of the digits, so it recursively the next number, i.e index + 1 and path + first character has been added.
 ---
  
 ## 💻 Code
  
-```python
-# Language: [Python/Java/Go/etc]
-# Time: O(?)  | Space: O(?)
+```cpp
+# Language: C++
+# Time: O(N ^ N)  | Space: O(N ^ N)
  
-class Solution:
-    def solutionName(self, ...):
-        """
-        Brief description of what function does
-        
-        Args:
-            param: explanation
-            
-        Returns:
-            explanation of return value
-        """
-        # Your code here
-        pass
+class Solution {
+public:
+    vector <string> letters = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    void scramble(vector <string> &result,string digits, int index,string path) {
+        int number = (int)digits[index] - '0';
+        if (path.length() == digits.length()) {
+            result.push_back(path);
+        } else {
+            for ( auto c :letters[number]) {
+                scramble(result,digits,index + 1, path + c);
+            }
+        }
+    }
+    vector<string> letterCombinations(string digits) {   
+        vector <string> result;
+        scramble(result, digits, 0, "");
+        return result;
+    }
+};
 ```
  
 ---
@@ -53,123 +57,24 @@ class Solution:
  
 | Metric | Complexity | Explanation |
 |--------|-----------|-------------|
-| **Time** | O(?) | [Giải thích từng vòng lặp/operation] |
-| **Space** | O(?) | [Giải thích memory sử dụng] |
-| **Trade-off** | [Nếu có] | [Bạn trade off gì?] |
- 
----
- 
-## ⚠️ Edge Cases & Solutions
- 
-| Edge Case | How I Handle It | Code |
-|-----------|-----------------|------|
-| Empty input | [mô tả] | `if not input: return ...` |
-| Single element | [mô tả] | `if len == 1: return ...` |
-| [Your edge case] | [mô tả] | [code snippet] |
- 
+| **Time** | O(N ^ N) | because if n = 2 so that it will have 4 conbinations of letters |
+| **Space** | O(N ^ N) | the generated space is derecly propotional  to the time complexity |
+
 ---
  
 ## 🔄 Test Cases
  
-```python
+```cpp
 # Test Case 1: Normal case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: "2"
+Output: ["a","b","c"]
 ✅ PASS
  
-# Test Case 2: Edge case
-Input: [example]
-Expected: [result]
-Got: [result]
-✅ PASS
- 
-# Test Case 3: Large input / Stress test
-Input: [example with large data]
-Expected: [result]
-Got: [result]
-Time: XYZ ms
+# Test Case 2: Normal case
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 ✅ PASS
 ```
- 
 ---
  
-## 🧠 Mistakes I Made First Time
- 
-1. **Mistake #1: [Cái bạn sai lần đầu]**
-   - What I did: [mô tả cách sai]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
-2. **Mistake #2: [Lỗi thứ 2]**
-   - What I did: [mô tả]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
----
- 
-## 💡 Lessons Learned / Optimizations
- 
-### **First Attempt (Brute Force)**
-- Approach: [mô tả cách brute force]
-- Time: O(n²) | Space: O(1)
-- Problem: [vấn đề của approach này]
-### **Optimized Solution**
-- Approach: [cách tối ưu]
-- Time: O(n) | Space: O(n)
-- Improvement: [so sánh - nhanh hơn bao nhiêu?]
----
- 
-## 🎓 Concepts Used
- 
-- **Data Structure**: [Hash Map / Array / Tree / etc]
-- **Algorithm Pattern**: [Two Pointers / Sliding Window / DFS / BFS / DP / etc]
-- **Technique**: [Binary Search / Greedy / Divide & Conquer / etc]
----
- 
-## 🔗 Related Problems
- 
-- Problem #XXX - [Similar concept]
-- Problem #YYY - [Follow-up problem]
-- Problem #ZZZ - [Same data structure]
----
- 
-## 📚 Resources
- 
-- [Link to explanation article]
-- [Link to similar problem solution]
-- [Your learning resource]
----
- 
-## 🏷️ Tags
- 
-#tag1 #tag2 #tag3
- 
-*Example: #array #hashmap #two-pointers #medium*
- 
----
- 
-## 📝 Interview Notes
- 
-### **If asked in interview:**
-- "Walk me through your approach" → [Tóm tắt 30 giây approach]
-- "Why O(n) space?" → [Giải thích cần space cho cái gì]
-- "Can you optimize further?" → [Có cách nào tốt hơn không?]
-- "Follow-up: What if...?" → [Xử lý variant nào?]
-### **What I'd say:**
-"I would approach this by [key insight], using [data structure] to [solve what]. This gives us [complexity] time and [complexity] space because [reason]."
- 
----
- 
-## ✅ Final Checklist
- 
-- [ ] Code runs without errors
-- [ ] All test cases pass
-- [ ] Complexity analysis is correct
-- [ ] Edge cases handled
-- [ ] README is clear and complete
-- [ ] Ready for interview questions
----
- 
-**Date Solved:** [Date]  
-**Attempt:** 1st try / 2nd try / Multiple tries  
-**Difficulty:** ⭐⭐⭐⭐⭐ (1-5 stars)  
-**Confidence Level:** 40% / 70% / 90%
+
