@@ -19,7 +19,7 @@ Usable backchecking if digits = 1 return 3 to 4  of scrambles, if digits > 1, us
 ### **Algorithm**
 1. Step 1: in class Solution: reclare a map of letters;
 2. Step 2: Create a recursive function add a combination if its size is equal to the size of digits. else it will recursively to the next number and add more letter.
-3. 3. Step 3: in main func,  reclare an empty vector of type string result, calling recursive function and return result.
+3. Step 3: in main func,  reclare an empty vector of type string result, calling recursive function and return result.
 ### **Why This Works**
 example: digits = "23" , first call with path = "", because the size of the path is smaller than the size of the digits, so it recursively the next number, i.e index + 1 and path + first character has been added.
 ---
