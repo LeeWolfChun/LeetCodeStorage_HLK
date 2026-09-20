@@ -1,5 +1,4 @@
-*Nơi chứa những bài leetcode Medium*
-# [ bvhjgfiuyfguyoiti7uo9[r[] - LeetCode #[XXX]
+# 19 Remove Nth Node From End of List - LeetCode #[XXX]
  
 ## 📌 Problem Statement
  
@@ -29,23 +28,30 @@
  
 ## 💻 Code
  
-```python
+```cpp
 # Language: [Python/Java/Go/etc]
 # Time: O(?)  | Space: O(?)
  
-class Solution:
-    def solutionName(self, ...):
-        """
-        Brief description of what function does
-        
-        Args:
-            param: explanation
-            
-        Returns:
-            explanation of return value
-        """
-        # Your code here
-        pass
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode* current = &dummy; 
+        for (int i = 0; i < n ; i++) {
+            current = current->next;
+        }
+        ListNode* prev = &dummy;
+        while (current->next != nullptr) {
+            current = current->next;
+            prev = prev->next;
+        }
+        ListNode* del = prev->next;
+        prev->next = del->next;
+        delete del;
+        return dummy.next;
+    }
+};
 ```
  
 ---
