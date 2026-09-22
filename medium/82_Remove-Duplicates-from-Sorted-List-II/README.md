@@ -7,6 +7,7 @@ Give a sorted Linked list, delete all nodes that have duplicate numbers, leaving
 **Example:**
 - Input: head = [1,2,3,3,4,4,5]
 - Output: [1,2,5]
+
 **Link:** [LeetCode 82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/)
  
 ---
