@@ -22,14 +22,14 @@ Priority queue can be used to take out a linked list from queue with smallest he
 3. Step 3: iterate through list and add this to pq.
 4. Step 4: tale out the  head node from pq, add this to merge list, head is point to next node, add new list edited to pq. 
 ### **Why This Works**
-[Giải thích logic đằng sau - tại sao algorithm này giải quyết bài toán]
+added all the head node of list to priority queue with compare defined. take out first node from the queue, this is a smallest numberof the list. Added it to result list and the priority queue again with next node 
  
 ---
  
 ## 💻 Code
  
 ```cpp
-# Language: C+_
+# Language: C++
 # Time: O(N log k)  | Space: O(N)
  
 struct compare {
@@ -71,16 +71,14 @@ public:
     }
 };
 ```
- 
 ---
  
 ## 📊 Complexity Analysis
  
 | Metric | Complexity | Explanation |
 |--------|-----------|-------------|
-| **Time** | O(?) | [Giải thích từng vòng lặp/operation] |
-| **Space** | O(?) | [Giải thích memory sử dụng] |
-| **Trade-off** | [Nếu có] | [Bạn trade off gì?] |
+| **Time** | O(N log K) | iterate each node once and add to the queue with complexity is log k |
+| **Space** | O(N) | not use extra space |
  
 ---
  
@@ -88,113 +86,31 @@ public:
  
 | Edge Case | How I Handle It | Code |
 |-----------|-----------------|------|
-| Empty input | [mô tả] | `if not input: return ...` |
-| Single element | [mô tả] | `if len == 1: return ...` |
-| [Your edge case] | [mô tả] | [code snippet] |
+| Empty input | [[]] | return dummy.next is nullprt |
  
 ---
  
 ## 🔄 Test Cases
  
-```python
+```cpp
 # Test Case 1: Normal case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: [[1,4,5],[1,3,4],[2,6]]
+Expected: [1,1,2,3,4,4,5,6]
 ✅ PASS
  
 # Test Case 2: Edge case
-Input: [example]
-Expected: [result]
-Got: [result]
+Input: [[]]
+Expected: []
 ✅ PASS
  
-# Test Case 3: Large input / Stress test
-Input: [example with large data]
-Expected: [result]
-Got: [result]
-Time: XYZ ms
-✅ PASS
 ```
- 
 ---
  
 ## 🧠 Mistakes I Made First Time
  
-1. **Mistake #1: [Cái bạn sai lần đầu]**
-   - What I did: [mô tả cách sai]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
-2. **Mistake #2: [Lỗi thứ 2]**
-   - What I did: [mô tả]
-   - Why it was wrong: [giải thích]
-   - Fix: [cách sửa]
+1. **Mistake #1: compare each node**
+   - What I did: compare each node and select smallest
+   - Why it was wrong: that's not wrong, but the time cpomplexity is major issue.
+   - Fix: use priority queue
+   - 
 ---
- 
-## 💡 Lessons Learned / Optimizations
- 
-### **First Attempt (Brute Force)**
-- Approach: [mô tả cách brute force]
-- Time: O(n²) | Space: O(1)
-- Problem: [vấn đề của approach này]
-### **Optimized Solution**
-- Approach: [cách tối ưu]
-- Time: O(n) | Space: O(n)
-- Improvement: [so sánh - nhanh hơn bao nhiêu?]
----
- 
-## 🎓 Concepts Used
- 
-- **Data Structure**: [Hash Map / Array / Tree / etc]
-- **Algorithm Pattern**: [Two Pointers / Sliding Window / DFS / BFS / DP / etc]
-- **Technique**: [Binary Search / Greedy / Divide & Conquer / etc]
----
- 
-## 🔗 Related Problems
- 
-- Problem #XXX - [Similar concept]
-- Problem #YYY - [Follow-up problem]
-- Problem #ZZZ - [Same data structure]
----
- 
-## 📚 Resources
- 
-- [Link to explanation article]
-- [Link to similar problem solution]
-- [Your learning resource]
----
- 
-## 🏷️ Tags
- 
-#tag1 #tag2 #tag3
- 
-*Example: #array #hashmap #two-pointers #medium*
- 
----
- 
-## 📝 Interview Notes
- 
-### **If asked in interview:**
-- "Walk me through your approach" → [Tóm tắt 30 giây approach]
-- "Why O(n) space?" → [Giải thích cần space cho cái gì]
-- "Can you optimize further?" → [Có cách nào tốt hơn không?]
-- "Follow-up: What if...?" → [Xử lý variant nào?]
-### **What I'd say:**
-"I would approach this by [key insight], using [data structure] to [solve what]. This gives us [complexity] time and [complexity] space because [reason]."
- 
----
- 
-## ✅ Final Checklist
- 
-- [ ] Code runs without errors
-- [ ] All test cases pass
-- [ ] Complexity analysis is correct
-- [ ] Edge cases handled
-- [ ] README is clear and complete
-- [ ] Ready for interview questions
----
- 
-**Date Solved:** [Date]  
-**Attempt:** 1st try / 2nd try / Multiple tries  
-**Difficulty:** ⭐⭐⭐⭐⭐ (1-5 stars)  
-**Confidence Level:** 40% / 70% / 90%
